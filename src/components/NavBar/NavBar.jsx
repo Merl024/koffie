@@ -2,7 +2,6 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import CartWidget from '../CartWidget/CartWidget';
-import './NavBar.css';
 
 function NavBar(){
   return(
@@ -12,9 +11,9 @@ function NavBar(){
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-                <Nav.Link href="#home">Café helado</Nav.Link>
-                <Nav.Link href="#link">Cafe caliente</Nav.Link>
-                <Nav.Link href="#home">Otros</Nav.Link>
+                <Nav.Link to={'/categoria/helado'} className={({isActive}) => isActive ? 'ActiveOption' :'Option' }>Café helado</Nav.Link>
+                <Nav.Link to={'/categoria/caliente'} className={({isActive}) => isActive ? 'ActiveOption' :'Option' }>Cafe caliente</Nav.Link>
+                <Nav.Link to={'/categoria/otros'} className={({isActive}) => isActive ? 'ActiveOption' :'Option' }>Otros</Nav.Link>
             </Nav>
             </Navbar.Collapse>
         </Container>

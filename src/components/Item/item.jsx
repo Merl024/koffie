@@ -1,16 +1,22 @@
 import React from 'react'
-const Item = ({user}) => {
+
+const Item = ({id, nombre, imagen, categoria}) => {
   return (
     <>
-    <div className='user'>
-        <h4>{user.id}</h4>
-        <h1>{user.nombre}</h1>
-        <div>
-            - {user.ocupacion}
-            <br/>
-            - {user.edad}
-        </div>
-    </div>
+        <article className='CardItem'>
+            <header className='Header'>
+                <h2 className='ItemHeader'>{id}. {nombre}</h2>
+            </header>
+            <picture>
+                <img src={imagen} alt={nombre} className='ItemImg' />
+            </picture>    
+            <section>
+                <p className='Info'> Categoria: {categoria}</p>
+            </section>
+            <footer className='ItemFooter'>
+                <link to={`/product/${id}`}> Ver detalles</link>
+            </footer>
+        </article>
     </>  
 )
 }
