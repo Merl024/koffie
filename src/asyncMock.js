@@ -4,7 +4,7 @@ const products = [
         id: 1,
         nombre: "Frozen capuccino",
         imagen: "/public/assets/frozen.png",
-        categoria: "Café helado",
+        categoria: "helado",
         precio: 3.75,
         tamanio: "14 onz"
     },
@@ -12,7 +12,7 @@ const products = [
         id: 2,
         nombre: "Fappé",
         imagen: "/public/assets/frappe.png",
-        categoria: "Café helado",
+        categoria: "helado",
         precio: 4.50,
         tamanio: "16 onz"
     },
@@ -20,7 +20,7 @@ const products = [
         id: 4,
         nombre: "Mocha helado",
         imagen: "/public/assets/mocha.png",
-        categoria: "Café helado",
+        categoria: "helado",
         precio: 3.75,
         tamanio: "14 onz"
     },
@@ -29,7 +29,7 @@ const products = [
         id: 4,
         nombre: "Café americano",
         imagen: "/public/assets/americano.png",
-        categoria: "Café caliente",
+        categoria: "caliente",
         precio: 2.75,
         tamanio: "12 onz"
     },
@@ -37,7 +37,7 @@ const products = [
         id: 5,
         nombre: "Latte",
         imagen: "/public/assets/latte.png",
-        categoria: "Café caliente",
+        categoria: "caliente",
         precio: 3.75,
         tamanio: "12 onz"
     },
@@ -45,7 +45,7 @@ const products = [
         id: 6,
         nombre: "White mocha",
         imagen: "/public/assets/mochacal.png",
-        categoria: "Café caliente",
+        categoria: "caliente",
         precio: 4.00,
         tamanio: "12 onz"
     },
@@ -54,7 +54,7 @@ const products = [
         id: 7,
         nombre: "Green Tea",
         imagen: "/public/assets/greentea.png",
-        categoria: "Otros",
+        categoria: "otros",
         precio: 4.75,
         tamanio: "16 onz"
     },
@@ -62,7 +62,7 @@ const products = [
         id: 8,
         nombre: "Hot chai",
         imagen: "/public/assets/chai.png",
-        categoria: "Otros",
+        categoria: "otros",
         precio: 4.75,
         tamanio: "14 onz"
     },
@@ -70,7 +70,7 @@ const products = [
         id: 9,
         nombre: "Cheesecake (Sugar Free)",
         imagen: "/public/assets/postre.png",
-        categoria: "Otros",
+        categoria: "otros",
         precio: 5.25,
         tamanio: "Una porción"
     }

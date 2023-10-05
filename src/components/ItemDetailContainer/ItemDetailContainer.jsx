@@ -10,7 +10,8 @@ export const ItemDetailContainer = () => {
     const { productId } = useParams()
 
     useEffect(()=>{
-        getProductById(productId)
+        let idParse = parseInt(productId)
+        getProductById(idParse)
             .then(res => {
                 setProduct(res)
             })
