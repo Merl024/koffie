@@ -3,7 +3,7 @@ const products = [
     {
         id: 1,
         nombre: "Frozen capuccino",
-        imagen: "/public/assets/frozen.png",
+        imagen: "../assets/frozen.png",
         categoria: "helado",
         precio: 3.75,
         tamanio: "14 onz"
@@ -11,7 +11,7 @@ const products = [
     {
         id: 2,
         nombre: "Fappé",
-        imagen: "/public/assets/frappe.png",
+        imagen: "../assets/frappe.png",
         categoria: "helado",
         precio: 4.50,
         tamanio: "16 onz"
@@ -19,7 +19,7 @@ const products = [
     {
         id: 4,
         nombre: "Mocha helado",
-        imagen: "/public/assets/mocha.png",
+        imagen: "../assets/mocha.png",
         categoria: "helado",
         precio: 3.75,
         tamanio: "14 onz"
@@ -28,7 +28,7 @@ const products = [
     {
         id: 4,
         nombre: "Café americano",
-        imagen: "/public/assets/americano.png",
+        imagen: "../assets/americano.png",
         categoria: "caliente",
         precio: 2.75,
         tamanio: "12 onz"
@@ -36,7 +36,7 @@ const products = [
     {
         id: 5,
         nombre: "Latte",
-        imagen: "/public/assets/latte.png",
+        imagen: "../assets/latte.png",
         categoria: "caliente",
         precio: 3.75,
         tamanio: "12 onz"
@@ -44,7 +44,7 @@ const products = [
     {
         id: 6,
         nombre: "White mocha",
-        imagen: "/public/assets/mochacal.png",
+        imagen: "../assets/mochacal.png",
         categoria: "caliente",
         precio: 4.00,
         tamanio: "12 onz"
@@ -53,7 +53,7 @@ const products = [
     {
         id: 7,
         nombre: "Green Tea",
-        imagen: "/public/assets/greentea.png",
+        imagen: "../assets/greentea.png",
         categoria: "otros",
         precio: 4.75,
         tamanio: "16 onz"
@@ -61,7 +61,7 @@ const products = [
     {
         id: 8,
         nombre: "Hot chai",
-        imagen: "/public/assets/chai.png",
+        imagen: "../assets/chai.png",
         categoria: "otros",
         precio: 4.75,
         tamanio: "14 onz"
@@ -69,7 +69,7 @@ const products = [
     {
         id: 9,
         nombre: "Cheesecake (Sugar Free)",
-        imagen: "/public/assets/postre.png",
+        imagen: "../assets/postre.png",
         categoria: "otros",
         precio: 5.25,
         tamanio: "Una porción"

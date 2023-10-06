@@ -3,6 +3,7 @@
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-weight: bold;
   color: #37170f;
+  margin: 20px;
 }
 
 h4{
@@ -10,7 +11,7 @@ h4{
   color: #554032;
 }
 
-.text, .App, .mt{
+.text, .mt{
   margin: 10px;
   padding: 7px;
 }
@@ -46,10 +47,19 @@ h4{
   color: white;
 }
 
+a {
+  background-color: #ddd71d8d ;
+  color: black;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  padding: 7px;
+  border: #282c34;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
 .App-link {
   color: #61dafb;
 }
-
 .controls, .mas{
   display: flex;
   justify-content: center;
@@ -68,4 +78,24 @@ h4{
   to {
     transform: rotate(360deg);
   }
+}
+ 
+/* CARD PARA LA PAG PRINCIPAL */
+.card{
+  background-color: #89192a8e;
+  margin: 20px;
+  text-align: center;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+  
+}
+.tituloCard{
+  font-size: 25pt;
+  font-weight: bold;
+  color: #4b4805 ;
+}
+
+.card p{
+  font-size: 20pt;
+
 }
