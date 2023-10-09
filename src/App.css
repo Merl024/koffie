@@ -83,7 +83,7 @@ a {
 /* CARD PARA LA PAG PRINCIPAL */
 .card{
   background-color: #89192a8e;
-  margin: 20px;
+  margin-bottom: 25px;
   text-align: center;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
@@ -98,4 +98,16 @@ a {
 .card p{
   font-size: 20pt;
 
+}
+
+.groups{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between ;
+  align-items: center;
+}
+
+.ItemImg{
+  width: 350px;
+  object-fit: initial ;
 }
