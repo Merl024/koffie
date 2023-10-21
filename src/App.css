@@ -65,11 +65,12 @@ a {
   justify-content: center;
   align-items: center;
 }
-.button{
+.button, .Option{
   margin: 10px;
   padding: 7px;
   background-color: #9d7f58;
   border-radius: 13px;
+  font-size: 18pt;
 }
 @keyframes App-logo-spin {
   from {
@@ -110,4 +111,9 @@ a {
 .ItemImg{
   width: 350px;
   object-fit: initial ;
+}
+
+.p-center{
+  display: contents;
+
 }
