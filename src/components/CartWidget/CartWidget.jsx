@@ -1,18 +1,18 @@
 import React from "react";
 import miImagen from '../Assets/carritoCompras.png'
-import { useState } from 'react';
-
+import { useContext } from 'react';
+import { CartContext } from "../../context/CartContext";
+import { Link } from "react-router-dom";
 
 const CartWidget = () => {
-    const [contador, setCont] = useState(0)
-    function sumarCont(){
-      setCont(contador+1)
-    }
+    
+    const { totalQuantity } = useContext(CartContext)
 
     return(
         <>
-            <img src={miImagen} alt="Carrito de compras" width={55} height={55}/>
-            <button onClick={sumarCont}>{contador}</button>
+            <Link to='/cart' className="CartWidget" style={{display: totalQuantity > 0 ? 'block' : 'none'}}>
+                <img src={miImagen} alt="Carrito de compras" width={55} height={55}/>
+            </Link>
         </>
     )
 }

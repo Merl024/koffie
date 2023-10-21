@@ -1,18 +1,29 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../../context/CartContext';
+
 
 export const ItemDetail = ({id, nombre, imagen, categoria, precio, tamanio}) => {
   
     const [quantityAdded, setQuantityAdded] = useState(0)
 
+    const { addItem } = useContext(CartContext)
+
     const handleOnAdd = (quantity) => {
         setQuantityAdded(quantity)
+
+        const item = {
+            id, nombre, precio
+        }
+    
+        addItem(item, quantity)
     }
-  
+
+
     return (
     <>
     <Card className='card col-6 p-center'>

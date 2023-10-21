@@ -1,5 +1,5 @@
 import '../../App.css';
-import { useState,useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { getProducts, getProductsByCategoria } from "../../asyncMock"
 import ItemList from "../ItemList/ItemList"
 import { useParams } from 'react-router-dom';
