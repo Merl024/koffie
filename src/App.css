@@ -117,3 +117,11 @@ a {
   display: contents;
 
 }
+
+.cart{
+  font-size: 10pt;
+}
+
+.CartWidget{
+  margin: margin 15px;
+}
