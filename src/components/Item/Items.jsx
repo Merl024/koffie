@@ -9,7 +9,7 @@ const Item = ({id, nombre, imagen, categoria}) => {
         <div>
         <Card className='card col-12'>
         <Card.Body>
-            <Card.Title className='tituloCard'>{id}. {nombre}</Card.Title>
+            <Card.Title className='tituloCard'>{nombre}</Card.Title>
             <picture ><img src={imagen} alt={nombre}  className='ItemImg'/> </picture>    
             <Card.Text><p className='Info'> Categoria: {categoria}</p> </Card.Text>
             <Link to={`/product/${id}`}> Ver detalles</Link>

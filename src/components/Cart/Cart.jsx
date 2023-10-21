@@ -13,16 +13,19 @@ const Cart = () => {
                 <Link to='/' className="Option">Menú</Link>
             </div>
         )
-    }
-
-    return(
+    } else{
+        return(
         <div>
-            {cart.map(p=> <CartItem key={p.id} {...p}/>)}
-            <h1>Total: ${total}</h1>
+            {cart.map(p=> <CartItem key={p.id} {...p} className="col-6"></CartItem>
+            )}
+            <h1>Total: ${total()}</h1>
             <button onClick={()=> clearCart()} className="Option">Limpiar carrito</button>
             <Link to='/checkout' className="Option">Checkout</Link>
         </div>
     )
+
+    }
+
 }
 
 export default Cart;
