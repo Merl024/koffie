@@ -17,7 +17,7 @@ export const ItemDetail = ({id, nombre, imagen, categoria, precio, tamanio}) => 
         setQuantityAdded(quantity)
 
         const item = {
-            id, nombre, precio
+            id, nombre, precio, imagen, categoria, tamanio
         }
     
         addItem(item, quantity)
