@@ -2,28 +2,21 @@ import React, { useState, useContext } from 'react'
 import { db } from '../../services/firebase'
 import { collection, serverTimestamp, addDoc } from 'firebase/firestore'
 import { CartContext } from '../../context/CartContext'
-import CartItem from '../CartItem/CartItem'
+import { Link } from 'react-router-dom'
 
 export default function Checkout() {
     const [ user, setUser ] = useState({})
     const [ validEmail, setValidEmail ] = useState('')
     const [ orderId, setOrderId ] = useState('')
     const { cart, total, clearCart } = useContext(CartContext)
-
     const datosUser = (e) => {
         setUser({
             ...user, 
             [e.target.name]:e.target.value
         })
     }
-
     const finalizarCompra = (e)=>{
         e.preventDefault()
-        //se creara un condicional para mandar el submit con todos su campos
-        if(!user.name && user.cel){
-            //esto se cambiara por un toastify
-            alert('Todos los campos son obligatorios')
-        } else{
             let order = {
                 user,
                 item: cart,
@@ -38,39 +31,35 @@ export default function Checkout() {
         })
         .catch((err)=> console.log(err))
         }
-    }
+
   return (
     <>
-    {orderId !== '' ? 
-    <div>
+    {orderId !== '' ?
+    <div className='checkout'>
         <h1>¡Yaay! Tu orden fue registrada con éxito</h1>
         <h4>Tu número de pedido es:</h4>
         <h3>{orderId}</h3>
-        <h4>El total de su compra es de: ${total()} dólares</h4>
-        <h6>El detalle de su pedido es: </h6>
-        {cart.map(p=> <CartItem key={p.id} {...p} className="cole-6 cart"></CartItem>)}
-        <h6> Sus datos sería:        </h6>
-        <p>{}</p>
+        <Link to='/' className="btnChekout Option"> - Regresar al menú - </Link>
     </div>
     : 
     <div className='m-3'>
-        <h1>Terminar compra</h1>
-        <h5>Por favor, complete los siguientes espacios con sus datos</h5>
-        <form onSubmit={finalizarCompra} className=' m-3'>
+        <h1 className='titulo'> Terminar compra</h1>
+        <h5 className='desc'>Por favor, complete los siguientes espacios con sus datos</h5>
+        <form onSubmit={finalizarCompra} className='formCheckout'>
             <div className='mb-2'>
-                <label className='form-label'>Nombre y apellido</label>
+                <label className='form-label labelText'>Nombre y apellido</label>
                 <input className='form-control' onChange={datosUser} type='text' placeholder='Nombre y apellido' name='name'/>
             </div>
             <div className='mb-2'>
-                <label className='form-label'>Número de teléfono</label>
+                <label className='form-label labelText'>Número de teléfono</label>
                 <input className='form-control' onChange={datosUser} type='number' placeholder='+5037904873' name='cel'/>
             </div>
             <div className='mb-2'>
-                <label className='form-label'>Correo electrónico</label>
+                <label className='form-label labelText'>Correo electrónico</label>
                 <input className='form-control' onChange={datosUser} type='email' placeholder='ejemplo@gmail.com' name='mail'/>
             </div>
             <div className='mb-2'>
-                <label className='form-label'>Confirme su email</label>
+                <label className='form-label labelText'>Confirme su email</label>
                 <input className='form-control' type='email' placeholder='ejemplo@gmail.com' name='mail' onChange={((e)=> setValidEmail(e.target.value))}/>
             </div>
             <button className='btn btn-dark' type='submit' disabled={validEmail !== user.mail}>Generar orden</button>
