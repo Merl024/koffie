@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
-const CartItem = ({id, nombre, imagen, precio, tamanio, categoria, quantity}) => {
+const CartItem = ({ nombre, imagen, precio, tamanio, categoria, quantity}) => {
   return (
     <>
     <Card className='card col-6'>
@@ -13,7 +13,7 @@ const CartItem = ({id, nombre, imagen, precio, tamanio, categoria, quantity}) =>
             <picture ><img src={imagen} alt={nombre}  className='ItemImg'/> </picture>    
             <Card.Text>
                 <p className='Info'> Categoria: {categoria}</p>
-                <p className='Info'> Precio: {precio}</p>
+                <p className='Info'> Precio: ${precio} dólares</p>
                 <p className='Info'> Tamaño: {tamanio}</p>
                 <p className='Info'> Unidades: {quantity}</p>
             </Card.Text>

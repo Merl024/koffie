@@ -19,6 +19,3 @@ const CartWidget = () => {
 }
 
 export default CartWidget;
-
-// #NOTA: Debes crear la funcion 'totalQuantity' en el CartContext, cuando esta esté creada puedes descomentar la linea anterior y  volver a poner el style,
-// #al ya tener la funcion correspondiente en el context deberia funcionar bien.

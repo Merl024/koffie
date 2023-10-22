@@ -28,7 +28,7 @@ export const ItemDetail = ({id, nombre, imagen, categoria, precio, tamanio}) => 
     <>
     <Card className='card col-6 p-center'>
         <Card.Body>
-        <Card.Title className='tituloCard'>{id}. {nombre}</Card.Title>
+        <Card.Title className='tituloCard'>{nombre}</Card.Title>
         <picture> <img src={imagen} alt={nombre} className='ItemImg' /> </picture>    
         <Card.Text>
             <p className='Info'> Categoria: {categoria}</p>

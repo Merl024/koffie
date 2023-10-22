@@ -2,10 +2,11 @@ import React, { useState, useContext } from 'react'
 import { db } from '../../services/firebase'
 import { collection, serverTimestamp, addDoc } from 'firebase/firestore'
 import { CartContext } from '../../context/CartContext'
+import CartItem from '../CartItem/CartItem'
 
 export default function Checkout() {
-    const [user, setUser] = useState({})
-    const [validEmail, setValidEmail] = useState('')
+    const [ user, setUser ] = useState({})
+    const [ validEmail, setValidEmail ] = useState('')
     const [ orderId, setOrderId ] = useState('')
     const { cart, total, clearCart } = useContext(CartContext)
 
@@ -45,12 +46,17 @@ export default function Checkout() {
         <h1>¡Yaay! Tu orden fue registrada con éxito</h1>
         <h4>Tu número de pedido es:</h4>
         <h3>{orderId}</h3>
+        <h4>El total de su compra es de: ${total()} dólares</h4>
+        <h6>El detalle de su pedido es: </h6>
+        {cart.map(p=> <CartItem key={p.id} {...p} className="cole-6 cart"></CartItem>)}
+        <h6> Sus datos sería:        </h6>
+        <p>{}</p>
     </div>
     : 
-    <div>
+    <div className='m-3'>
         <h1>Terminar compra</h1>
-        <h5>Por favor, llene con sus datos</h5>
-        <form onSubmit={finalizarCompra}>
+        <h5>Por favor, complete los siguientes espacios con sus datos</h5>
+        <form onSubmit={finalizarCompra} className=' m-3'>
             <div className='mb-2'>
                 <label className='form-label'>Nombre y apellido</label>
                 <input className='form-control' onChange={datosUser} type='text' placeholder='Nombre y apellido' name='name'/>

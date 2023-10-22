@@ -117,6 +117,7 @@ a {
 
 .p-center{
   display: contents;
+  
 
 }
 
@@ -126,4 +127,15 @@ a {
 
 .CartWidget{
   margin: margin 15px;
+}
+
+.noCart{
+  margin-top: 30px;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #4b4805;
+}
+.noCart h1{
+  margin-bottom: 25px;
+
 }
