@@ -8,16 +8,16 @@ import { db } from '../../services/firebase'
 
 export const ItemDetailContainer = () => {
     const [product, setProduct] = useState(null)
-    const { id } = useParams()
+    const { productId } = useParams()
 
     
     useEffect(() => {
         const collectionProd = collection(db, 'menu')
-        const refDoc = doc(collectionProd, id)
+        const refDoc = doc(collectionProd, productId)
         getDoc(refDoc)
         .then((res)=> setProduct({id:res.id, ...res.data()}))
         .catch((err)=> console.log(err))
-    }, [id])
+    }, [productId])
     
     // useEffect(()=>{
     //     let idParse = parseInt(productId)

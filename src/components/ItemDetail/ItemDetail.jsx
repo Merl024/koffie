@@ -38,7 +38,7 @@ export const ItemDetail = ({id, nombre, imagen, categoria, precio, tamanio}) => 
         <footer className='ItemFooter'>
             {
                 quantityAdded > 0 ? (
-                    <Link to='/cart' className='Option'> Terminar compra</Link>
+                    <Link to='/cart' className='Option'> Agregar al carrito</Link>
                 ) : (
                     <ItemCount initial={1} stock={35} onAdd={handleOnAdd}/>
                 )

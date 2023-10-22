@@ -10,9 +10,9 @@ const CartWidget = () => {
 
     return(
         <>
-            <Link to='/cart' className="CartWidget" >
+            <Link to='/cart'>
                 <img src={miImagen} alt="Carrito de compras" width={55} height={55}/>
-                <span className="cart">{totalQuantity()}</span>
+                <span className="CartWidget">{totalQuantity()}</span>
             </Link>
         </>
     )
