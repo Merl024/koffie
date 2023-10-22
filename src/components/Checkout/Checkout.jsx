@@ -6,6 +6,7 @@ import { CartContext } from '../../context/CartContext'
 export default function Checkout() {
     const [user, setUser] = useState({})
     const [validEmail, setValidEmail] = useState('')
+    const [ orderId, setOrderId ] = useState('')
     const { cart, total, clearCart } = useContext(CartContext)
 
     const datosUser = (e) => {
@@ -25,17 +26,27 @@ export default function Checkout() {
             let order = {
                 user,
                 item: cart,
-                total: total,
+                total: total(),
                 date: serverTimestamp()
             }
-            console.log(order)
         const venta = collection(db, 'orders')
-        // addDoc(venta, order)
-        // .then((res)=> console.log(res.id))
-        // .catch((err)=> console.log(err))
+        addDoc(venta, order)
+        .then((res)=> {
+            setOrderId(res.id)
+            clearCart()
+        })
+        .catch((err)=> console.log(err))
         }
     }
   return (
+    <>
+    {orderId !== '' ? 
+    <div>
+        <h1>¡Yaay! Tu orden fue registrada con éxito</h1>
+        <h4>Tu número de pedido es:</h4>
+        <h3>{orderId}</h3>
+    </div>
+    : 
     <div>
         <h1>Terminar compra</h1>
         <h5>Por favor, llene con sus datos</h5>
@@ -58,6 +69,8 @@ export default function Checkout() {
             </div>
             <button className='btn btn-dark' type='submit' disabled={validEmail !== user.mail}>Generar orden</button>
         </form>
-    </div>
+    </div>      
+    }
+    </>
   )
 }
