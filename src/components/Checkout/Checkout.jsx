@@ -17,6 +17,9 @@ export default function Checkout() {
     }
     const finalizarCompra = (e)=>{
         e.preventDefault()
+        if(!user.name && !user.cel){
+            alert('Complete todos los espacios')
+        } else{
             let order = {
                 user,
                 item: cart,
@@ -31,6 +34,7 @@ export default function Checkout() {
         })
         .catch((err)=> console.log(err))
         }
+    }
 
   return (
     <>
